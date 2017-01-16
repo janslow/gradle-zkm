@@ -8,13 +8,12 @@ buildscript {
     classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
   }
 }
-apply plugin: "com.gradle.plugin-publish"
 
 group 'com.jayanslow.gradle'
 version '0.1.0-SNAPSHOT'
 
+apply plugin: "com.gradle.plugin-publish"
 apply plugin: 'groovy'
-apply plugin: 'maven-publish'
 
 repositories {
   mavenCentral()
@@ -31,15 +30,15 @@ dependencies {
 }
 
 pluginBundle {
-  website = 'http://www.gradle.org/'
-  vcsUrl = 'https://github.com/gradle/gradle'
-  description = 'Greetings from here!'
-  tags = ['greetings', 'salutations']
+  website = 'https://github.com/janslow/gradle-zkm'
+  vcsUrl = 'https://github.com/janslow/gradle-zkm'
+  description = 'Plugin for obfuscating Java using ZKM'
+  tags = ['zkm', 'obfuscation']
 
   plugins {
-    greetingsPlugin {
-      id = 'org.samples.greeting'
-      displayName = 'Gradle Greeting plugin'
+    zkmPlugin {
+      id = 'com.jayanslow.gradle.zkm'
+      displayName = 'ZKM'
     }
   }
 }
